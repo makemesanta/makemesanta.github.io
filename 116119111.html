@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Smarty Pants!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;max-width:60%; text-align:center;">
+                <h3>😎 Smarty pants!! 😎</h3>
+                <hr />
+                <p>Ohh! You seem smart, we are always in need of smart people, unlike my stupid elves, took 'em half a year and came empty handed,
+                    so let's make this a bit more fun than me simpy climbing down your chimney, dusting off the chimney soot from my magnificient coat
+                    and silently placing over your gift.
+                </p>
+                <br />
+                <p>
+                    This time, you'll do the work, and climb up the chimney to find your presents...<br>
+                        and maybe, just maybe, find out who the real santa is!
+                </p>
+                <br>
+                <p>
+                    For this challenge, I want you to <br> <b>Go to the most supporting person on the team and find a little trinket and a little hint about my identity!</b>
+                </p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                    <input id="input-text" type="text" placeholder="LOCKED!" style="width:400px;text-align:center; padding:5px; border-radius:2dp;"/>
+                    <br><br>
+                    <button class="btn btn-primary btn-large" onclick="unlock()">Unlock</button>
+            </div>
+            <div id="error" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                    <i style="color:red;">Ooohh! Not quite right..</i>
+                </div>
+            <div id="hint" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <i>Too many failed attempts, a phone would just lock you out at this point! I'm a bit lineant! Keep trying...</i>
+            </div>
+            <div id="continue" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <h4>People tell me that my tastes for a Santa are a bit dark, I like thriller, mystery, crime and murder! What's your literary poison?</h4>
+                <button class="btn btn-success btn-large" onclick="goahead()">Wonderland is ready, shall we? <span class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+    </body>
+    <script>
+        console.log("%c Ohh! C'mon, try to stay a good girl for another day, No cheating!!!",'color: red; font-size:24px;');
+        failed=0;
+        const max_fail=2;
+        function unlock(){
+            value = document.getElementById("input-text").value;
+            if (superlate(value)=="83726982" || superlate(value)=="115104101114"){
+                document.getElementById("continue").style.display="flex";
+                document.getElementById("error").style.display="none";
+                document.getElementById("hint").style.display="none";
+                document.getElementById("input-text").disabled=true;
+                document.getElementById("continue").disabled=true;
+            }else{
+                document.getElementById("error").style.display="flex";
+                if(failed>=max_fail){
+                    document.getElementById("hint").style.display="flex";
+                }
+                failed+=1;
+            }
+        }
+        function superlate(str){
+            slate="";
+            for(i in str){
+                slate+=str.charCodeAt(i);
+            }
+            return slate;
+        }
+        function goahead(){
+            window.location="116104114101101.html"
+        }
+    </script>
+</html>

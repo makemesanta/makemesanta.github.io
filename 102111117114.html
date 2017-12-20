@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>A bit stuck!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;max-width:60%; text-align:center;">
+                <h3>🚒🚓 A traffic snafu! 🚑🚗</h3>
+                <hr />
+                <p>
+                    So apparently, the city folk of Bangalore don't sit around in winters waiting for their christmas presents,
+                    but they take to the overly narrow roads... Now I'm stuck, already running late. Don't be impatient child, never does a tree
+                    goes without presents on christmas eve, santa and his uselss elves are hard at work and will get you your presents on time.
+                </p>
+                <p>
+                    Actually, I could use your help getting out of this traffic. The fly mode on my reindeer sleigh isn't working correctly, a certain part is missing...
+                    Can you help me find it and fly off into the air to deliver presents?
+                </p>
+                <p>Of course you will... who says no to santa? 🎅</p>
+                <p><b>
+                    We have our own traffic violater here, who has paid off the most tickets.. head over to this violater and get that missing part!
+                </b></p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <input id="input-text" type="text" placeholder="Missing car part!" style="width:400px;text-align:center; padding:5px; border-radius:2dp;"/>
+                <br><br>
+                <button class="btn btn-primary btn-large" onclick="findHim()">Install part</button>
+            </div>
+            <div id="error" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <i style="color:red;">Ooohh! Wrong part, seems like you broke another sleigh, kidnly return it!</i>
+            </div>
+            <div id="hint" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <i>What came first, chicken or egg?</i>
+            </div>
+            <div id="continue" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <h4>People who know me, always say that, my only true best friend is food! You a foodie?</h4>
+                <button class="btn btn-success btn-large" onclick="goahead()">Merry Christmas ❄ <span class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+    </body>
+    <script>
+        console.log("%c Ohh! C'mon, try to stay a good girl for another day, No cheating!!!",'color: red; font-size:24px;');
+        failed=0;
+        const max_fail=5;
+        function findHim(){
+            value = document.getElementById("input-text").value;
+            if (superlate(value.toLowerCase())=="9910410599107101110325453"){
+                document.getElementById("continue").style.display="flex";
+                document.getElementById("error").style.display="none";
+                document.getElementById("hint").style.display="none";
+                document.getElementById("input-text").disabled=true;
+                document.getElementById("continue").disabled=true;
+            }else{
+                document.getElementById("error").style.display="flex";
+                if(failed>=max_fail){
+                    document.getElementById("hint").style.display="flex";
+                }
+                failed+=1;
+            }
+        }
+        function superlate(str){
+            slate="";
+            for(i in str){
+                slate+=str.charCodeAt(i);
+            }
+            return slate;
+        }
+        function goahead(){
+            window.location="102105118101.html"
+        }
+    </script>
+</html>

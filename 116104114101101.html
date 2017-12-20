@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Welcome to the winter wonderland!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;max-width:60%; text-align:center;">
+                <h3>❄ Winter has come!! ❄</h3>
+                <hr />
+                <p>
+                    Ned stark, Jon Snow, Danaerys Targareyan, Tyrion Lanister and the rest of the people in the world of GoT keep saying
+                    winter is coming, and they seem afraid... Wonder who their Santa is? Damn! That must be a really bad santa.. 
+                    But not yours.. So let's celebrate the winters and be glad that we live in Bangalore, where the winters are only a few degrees below
+                    summers!
+                </p>
+
+                <p>So the elves are back, they tell me they've to pack another present but this particular present requires a special code
+                    to get packed! So, naturally I told them I know a real smarty pants, they said, they don't want to waste another half a year
+                    and asked me to ask you for help! Will you help us?
+                </p>
+                <p>
+                    Ofcourse you will, you sweet child o' mine! (pun intended)
+                </p>
+                <p>
+                    <b>So find the Lord Varys of Mahabharatha and ask them for their help on this code!</b>
+                </p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                    <input id="input-text" type="text" placeholder="Missing from the show!" style="width:400px;text-align:center; padding:5px; border-radius:2dp;"/>
+                    <br><br>
+                    <button class="btn btn-primary btn-large" onclick="findHim()">Find him!</button>
+            </div>
+            <div id="error" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                    <i style="color:red;">Ooohh! Wrong person, doesn't seem that important!</i>
+                </div>
+            <div id="hint" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <i>Hmm.. A bastard son went on an expedition, took him 6 long seasons to come back!</i>
+            </div>
+            <div id="continue" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <h4>I may not like the way things are in the old westeros, but I do love me a good braodcast of the Game of Thrones, what about you? Prefer GoT binge?</h4>
+                <button class="btn btn-success btn-large" onclick="goahead()">Why do bells Jingle? Why not ting ting? <span class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+    </body>
+    <script>
+        console.log("%c Ohh! C'mon, try to stay a good girl for another day, No cheating!!!",'color: red; font-size:24px;');
+        failed=0;
+        const max_fail=5;
+        function findHim(){
+            value = document.getElementById("input-text").value;
+            if (superlate(value)=="71101110100114121" || superlate(value)=="103101110100114121" || superlate(value)== "716978688289"){
+                document.getElementById("continue").style.display="flex";
+                document.getElementById("error").style.display="none";
+                document.getElementById("hint").style.display="none";
+                document.getElementById("input-text").disabled=true;
+                document.getElementById("continue").disabled=true;
+            }else{
+                document.getElementById("error").style.display="flex";
+                if(failed>=max_fail){
+                    document.getElementById("hint").style.display="flex";
+                }
+                failed+=1;
+            }
+        }
+        function superlate(str){
+            slate="";
+            for(i in str){
+                slate+=str.charCodeAt(i);
+            }
+            return slate;
+        }
+        function goahead(){
+            window.location="102111117114.html"
+        }
+    </script>
+</html>

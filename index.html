@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>May your wishes come true, and on time!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <h3>🔔🔔 Jingle Bells! Jingle Bells! 🔔🔔</h3>
+            <hr>
+            <p>Ho Ho Ho!</p>
+            <p>Hey Gurl! I am your Santa, and everyone else's, because duh! I am Santa! </p>
+            <p>I am running a bit late as my elves have left the north pole to find the answer to a stupid question,
+                which I believe is very lame, but due to that, my gifts to you have become a little late.
+            </p>
+            <p>I know you've been good this year, and you deserve all the things you wish, but to get the ball rolling, I need my elves
+                back and for that, I need your help.
+            </p>
+            <p>
+                The question they've been trying to find the answer to is fairly simpe and hidden in plain sight.
+            </p>
+            <p><b>What is the answer to Life, Universe and everything?</b></p>
+            
+            <p><b>I need your help, please solve this puzzle and let's proceed with the christmas spirit! 😊</b></p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+            <input id="input-text" type="text" placeholder="Your answer, my repentance!" style="width:400px;text-align:center; padding:5px; border-radius:2dp;"/>
+            <br><br>
+            <button class="btn btn-primary btn-large" onclick="submit()">Submit</button>
+        </div>
+        <div id="error" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+                <i style="color:red;">Hmm... not quite right, elves are still looking!</i>
+            </div>
+        <div id="hint" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+            <i>Maybe go ahead and read Monty Python? Or why not try the first Code chef tutorial?</i>
+        </div>
+        <div id="continue" style="display:none; flex-direction:column; align-items:center; justify-content:center; margin-top:40px;">
+            <h4>You did it! Thank god!! Elves are on their way back now! Thank you so much!</h4>
+            <button class="btn btn-success btn-large" onclick="goahead()">Let's move ahead, shall we? <span class="glyphicon glyphicon-arrow-right"></span></button>
+        </div>
+    </body>
+    <script>
+        console.log("%c Ohh! C'mon, try to stay a good girl for another day, No cheating!!!",'color: red; font-size:24px;')
+        failed=0;
+        const max_fail=2;
+        function submit(){
+            value = document.getElementById("input-text").value;
+            if (parseInt(value)/7==6){
+                document.getElementById("continue").style.display="flex";
+                document.getElementById("error").style.display="none";
+                document.getElementById("hint").style.display="none";
+                document.getElementById("input-text").disabled=true;
+                document.getElementById("continue").disabled=true;
+            }else{
+                document.getElementById("error").style.display="flex";
+                if(failed>=max_fail){
+                    document.getElementById("hint").style.display="flex";
+                }
+                failed+=1;
+            }
+        }
+        function goahead(){
+            window.location="116119111.html"
+        }
+    </script>
+</html>
