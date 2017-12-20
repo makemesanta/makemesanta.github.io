@@ -49,7 +49,7 @@
         const max_fail=5;
         function findHim(){
             value = document.getElementById("input-text").value;
-            if (superlate(value)=="71101110100114121" || superlate(value)=="103101110100114121" || superlate(value)== "716978688289"){
+            if (superlate(value.toLowerCase())=="103101110100114121"){
                 document.getElementById("continue").style.display="flex";
                 document.getElementById("error").style.display="none";
                 document.getElementById("hint").style.display="none";

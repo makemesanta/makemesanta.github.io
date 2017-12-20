@@ -45,7 +45,7 @@
         const max_fail=2;
         function unlock(){
             value = document.getElementById("input-text").value;
-            if (superlate(value)=="83726982" || superlate(value)=="115104101114"){
+            if (superlate(value.toLowerCase())=="115104101114"){
                 document.getElementById("continue").style.display="flex";
                 document.getElementById("error").style.display="none";
                 document.getElementById("hint").style.display="none";
